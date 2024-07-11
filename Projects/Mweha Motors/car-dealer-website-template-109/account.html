@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+    <title>Mweha Motors | Best car dealership</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1ov5HvXb6Z4nUfFtj8zVJS5cRJw2TqkYizjCd" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zmdicons/1.0.0/zmdi.min.css" />
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="shortcut icon" href="assets/images/Mweha Motors logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main">
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="assets/images/signin-image.jpg" alt="sing up image"></figure>
+                        <a href="signup.html" class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign In</h2>
+                        <form method="POST" class="register-form" id="login-form">
+                            <div class="form-group">
+                                <label for="your_email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="email" name="your_email" id="your_email" placeholder="Your Email"
+                                    required />
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password" required />
+                                <div id="password-strength"></div>
+                                <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="show-password" class="agree-term" onclick="togglePasswordVisibility()"/>
+                                <label for="show-password" class="label-agree-term"><span><span></span></span>Show Password</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
+                                    me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                            </div>
+                        </form>
+                        <div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                <li><a href="#" class="display-flex-center"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#" class="display-flex-center"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#" class="display-flex-center"><i class="zmdi zmdi-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('pass');
+            if (passwordField.value) {
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                } else {
+                    passwordField.type = "password";
+                }
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('login-form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var emailField = document.getElementById('your_email');
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailField.value)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+
+                form.submit();
+            });
+        });
+    </script>
+</body>
+<script src="assets/js/custom.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+
+</html>
